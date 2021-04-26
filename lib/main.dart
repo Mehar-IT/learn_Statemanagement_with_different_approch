@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:statae_management/pages/MyList.dart';
+import 'pages/MyList.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +16,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("State Management"),
         ),
+        body: MyList(),
       ),
     );
   }

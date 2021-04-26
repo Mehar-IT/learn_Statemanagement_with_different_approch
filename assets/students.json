@@ -1,0 +1,109 @@
+{
+ "Students":[
+  {"roll_number":1,
+    "name":"Hamza",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":2,
+    "name":"Ahsan",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":3,
+    "name":"Arsal",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":4,
+    "name":"Hasnain",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":5,
+    "name":"Zeeshan",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":6,
+    "name":"Aqib",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":7,
+    "name":"Huzaifa",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":8,
+    "name":"Pasha",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+}, 
+  {"roll_number":9,
+    "name":"Zahid",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":10,
+    "name":"Kosain",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":11,
+    "name":"Razaq",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":12,
+    "name":"Halar",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":13,
+    "name":"Adil",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":14,
+    "name":"Junaid",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":15,
+    "name":"Gajju",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":16,
+    "name":"Magsi",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":16,
+    "name":"Awais",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":17,
+    "name":"Fawad",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":18,
+    "name":"Shoiab",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":19,
+    "name":"Naseem",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+},
+  {"roll_number":20,
+    "name":"Yazdan",
+    "University":"University Of Sindh",
+    "Dept":"IICT"
+} 
+ ]
+}
