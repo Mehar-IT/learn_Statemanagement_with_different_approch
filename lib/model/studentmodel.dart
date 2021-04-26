@@ -1,9 +1,9 @@
-class Student {
+class StudentsModel {
   List<Students> students;
 
-  Student({this.students});
+  StudentsModel({this.students});
 
-  Student.fromJson(Map<String, dynamic> json) {
+  StudentsModel.fromJson(Map<String, dynamic> json) {
     if (json['Students'] != null) {
       students = <Students>[];
       json['Students'].forEach((v) {

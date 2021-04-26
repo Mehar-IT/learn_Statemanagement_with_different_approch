@@ -20,7 +20,7 @@ class _MyListState extends State<MyList> {
   void fetchData() async {
     String json = await rootBundle.loadString('assets/students.json');
     var decodedData = jsonDecode(json);
-    var data = Student.fromJson(decodedData);
+    var data = StudentsModel.fromJson(decodedData);
     student = data.students;
     setState(() {});
   }
