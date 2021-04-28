@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:statae_management/model/studentmodel.dart';
 
+import 'ItemDetail.dart';
+
 class MyList extends StatefulWidget {
   @override
   _MyListState createState() => _MyListState();
@@ -10,6 +12,7 @@ class MyList extends StatefulWidget {
 
 class _MyListState extends State<MyList> {
   List<Students> student;
+
   @override
   void initState() {
     fetchData();
@@ -31,11 +34,17 @@ class _MyListState extends State<MyList> {
         ? ListView.builder(
             itemCount: student.length,
             itemBuilder: (context, index) => ListTile(
-                  trailing: IconButton(icon: Icon(Icons.add), onPressed: () {}),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ItemDetail(selectedStudent: student[index])));
+                  },
                   title: Text(student[index].name),
                   leading: Text('${student[index].rollNumber}'),
-                  subtitle: Text(
-                      '${student[index].dept},${student[index].university}'),
+                  // subtitle: Text(
+                  //     '${student[index].dept},${student[index].university}'),
                 ))
         : Center(child: CircularProgressIndicator());
   }
