@@ -1,32 +1,15 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:statae_management/model/studentmodel.dart';
 
-import 'ItemDetail.dart';
+class MyList extends StatelessWidget {
+  final List<Students> student;
+  final List<Students> selectedStudent;
 
-class MyList extends StatefulWidget {
-  @override
-  _MyListState createState() => _MyListState();
-}
-
-class _MyListState extends State<MyList> {
-  List<Students> student;
-
-  @override
-  void initState() {
-    fetchData();
-
-    super.initState();
-  }
-
-  void fetchData() async {
-    String json = await rootBundle.loadString('assets/students.json');
-    var decodedData = jsonDecode(json);
-    var data = StudentsModel.fromJson(decodedData);
-    student = data.students;
-    setState(() {});
-  }
+  const MyList({
+    Key key,
+    @required this.selectedStudent,
+    @required this.student,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,17 +17,16 @@ class _MyListState extends State<MyList> {
         ? ListView.builder(
             itemCount: student.length,
             itemBuilder: (context, index) => ListTile(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ItemDetail(selectedStudent: student[index])));
-                  },
+                  trailing: IconButton(
+                    icon: Icon(Icons.add),
+                    onPressed: () {
+                      selectedStudent.add(student[index]);
+                    },
+                  ),
                   title: Text(student[index].name),
                   leading: Text('${student[index].rollNumber}'),
-                  // subtitle: Text(
-                  //     '${student[index].dept},${student[index].university}'),
+                  subtitle: Text(
+                      '${student[index].dept},${student[index].university}'),
                 ))
         : Center(child: CircularProgressIndicator());
   }
