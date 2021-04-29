@@ -1,12 +1,15 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
+import 'package:statae_management/model/SelectedStuedntModel.dart';
 import 'package:statae_management/pages/ItemDetail.dart';
 import 'pages/MyList.dart';
 import 'model/studentmodel.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider<SelectedStudentModel>(
+      create: (contex) => SelectedStudentModel(), child: MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -16,7 +19,6 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List<Students> student;
-  List<Students> selectedStudent = [];
 
   @override
   void initState() {
@@ -36,27 +38,27 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'State Management Application',
         home: Builder(
-      builder: (BuildContext context) => Scaffold(
-        appBar: AppBar(
-          actions: [
-            IconButton(
-                icon: Icon(Icons.school),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => SelectedStudent(
-                                selectedStudent: selectedStudent,
-                              )));
-                })
-          ],
-          title: Text("State Management"),
-        ),
-        body: MyList(
-            student: student,
-            selectedStudent: (index) => selectedStudent.add(student[index])),
-      ),
-    ));
+          builder: (BuildContext context) => Scaffold(
+            appBar: AppBar(
+              actions: [
+                IconButton(
+                    icon: Icon(Icons.school),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SelectedStudent()));
+                    })
+              ],
+              title: Text("State Management"),
+            ),
+            body: MyList(
+              student: student,
+            ),
+          ),
+        ));
   }
 }
