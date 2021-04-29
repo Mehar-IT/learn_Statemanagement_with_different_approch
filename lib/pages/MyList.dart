@@ -3,7 +3,8 @@ import 'package:statae_management/model/studentmodel.dart';
 
 class MyList extends StatelessWidget {
   final List<Students> student;
-  final List<Students> selectedStudent;
+
+  final ValueSetter<int> selectedStudent;
 
   const MyList({
     Key key,
@@ -20,7 +21,7 @@ class MyList extends StatelessWidget {
                   trailing: IconButton(
                     icon: Icon(Icons.add),
                     onPressed: () {
-                      selectedStudent.add(student[index]);
+                      selectedStudent(index);
                     },
                   ),
                   title: Text(student[index].name),

@@ -54,9 +54,8 @@ class _MyAppState extends State<MyApp> {
           title: Text("State Management"),
         ),
         body: MyList(
-          student: student,
-          selectedStudent: selectedStudent,
-        ),
+            student: student,
+            selectedStudent: (index) => selectedStudent.add(student[index])),
       ),
     ));
   }
