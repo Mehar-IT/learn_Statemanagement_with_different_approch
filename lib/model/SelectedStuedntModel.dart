@@ -1,13 +1,12 @@
-import 'package:flutter/material.dart';
-import 'studentmodel.dart';
+import 'package:get/get.dart';
+import 'package:statae_management/model/studentmodel.dart';
 
-class SelectedStudentModel extends ChangeNotifier {
-  List<Students> _selectedStudent = [];
+class SelectedStudentModel extends GetxController {
+  RxList<Students> _selectedStudent = [].obs;
 
-  List<Students> get selectedStudent => _selectedStudent;
+  RxList<Students> get selectedStudent => _selectedStudent;
 
   void add(var value) {
     _selectedStudent.add(value);
-    notifyListeners();
   }
 }

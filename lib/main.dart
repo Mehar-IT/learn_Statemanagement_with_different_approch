@@ -1,15 +1,13 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
-import 'package:statae_management/model/SelectedStuedntModel.dart';
+import 'package:get/get.dart';
 import 'package:statae_management/pages/ItemDetail.dart';
 import 'pages/MyList.dart';
 import 'model/studentmodel.dart';
 
 void main() {
-  runApp(ChangeNotifierProvider<SelectedStudentModel>(
-      create: (contex) => SelectedStudentModel(), child: MyApp()));
+  runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -37,7 +35,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'State Management Application',
         home: Builder(
@@ -47,10 +45,7 @@ class _MyAppState extends State<MyApp> {
                 IconButton(
                     icon: Icon(Icons.school),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SelectedStudent()));
+                      Get.to(() => SelectedStudent());
                     })
               ],
               title: Text("State Management"),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 import 'package:statae_management/model/SelectedStuedntModel.dart';
 import 'package:statae_management/model/studentmodel.dart';
 
@@ -10,6 +10,7 @@ class MyList extends StatelessWidget {
     Key key,
     @required this.student,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return (student != null)
@@ -19,8 +20,7 @@ class MyList extends StatelessWidget {
                   trailing: IconButton(
                     icon: Icon(Icons.add),
                     onPressed: () {
-                      Provider.of<SelectedStudentModel>(context, listen: false)
-                          .add(student[index]);
+                      Get.put(SelectedStudentModel()).add(student[index]);
                     },
                   ),
                   title: Text(student[index].name),
